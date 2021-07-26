@@ -1,47 +1,50 @@
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 
-int _printf(const char *format, ...)
+typedef struct spec
 {
-	unsigned int j, i, q, p = 1;
-	char *index;
-	char *str;
-	
-	va_list print;
-	va_start(print, format);
-	for (q = 0; format[q] != '\0'; q++)
-	{
-		index[q] = format[q];
-	}
-	for (index[q] = index[0]; *index != '\0'; index++)
-	{
-		while(*index != '%')
-		{
-			putchar(*format);
-			index++;
-		}
+    char s;
+    void (func_p*)(int c)
 
-		index++;
+}sp_t;
 
-			switch (*index)
-			{
-				case 'c':
-					i = va_arg(print, int);
-					putchar(i);
+    sp_t specifier[] = {
+        {"c", print_char},
+        {"s", print_str},
+        {"d", print_int},
+        {"i", print_uint},
+        {"%", get_modifier},
+        {NULL, NULL}
+    };
+    int i;
+/**
+ * _printf -
+ *
+ */
+void _printf(const char *format, ...)
+{
+    va_list args;
+    va_start(args, format);
 
-					break;
-				case 's':
-					str = va_arg(print, char *);
-					for (j = 0; str[j] != '\0'; j++)
-					{
-						putchar(str[j]);
-					}
-					putchar('\0');
-					break;
-			}
-		p++;
-	}
-	va_end(print);
-	return (p);
+    while (*format != '\0') {
+
+        if (*format == 'd') {
+            int i = va_arg(args,int);
+            putchar(51);
+        } else if (*format == 'c') {
+            int c = va_arg(args, int);
+            printf( "%c\n", (char)c ) ;
+        } else if (*format == 'f') {
+            double d = va_arg(args, double);
+            printf( "%f\n", d ) ;
+        }
+        format++;
+    }
+
+    va_end(args);
 }
 
+int main()
+{
+    _printf("dcfc", 3, 'a', 1.999, 'v');
+}
