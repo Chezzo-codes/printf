@@ -1,3 +1,12 @@
+#include <stdio.h>
+#include <stdarg.h>
+
+/**
+ * _printf - print format
+ * @format:char * - string
+ *
+ * Return: int - string length
+ */
 int _printf(const char *format, ...)
 {
     va_list args;
