@@ -1,6 +1,8 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
 
+int _putchar(char c)
 int _printf(const char *format, ...);
+int get_strlen(const char *str);
 
 #endif
