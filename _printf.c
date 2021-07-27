@@ -52,6 +52,11 @@ int _printf(const char*format,... )
 					print_int(ret);
 				}
 				break;
+				case '%':
+				{
+					_putchar('%');
+				}
+				break;
 				default:
 				{
 					_putchar(*format);
