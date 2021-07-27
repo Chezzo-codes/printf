@@ -52,7 +52,7 @@ int _printf(const char*format,... )
 					print_int(ret);
 				}
 				break;
-				case '%':
+				case '%'
 				{
 					_putchar('%');
 				}
