@@ -5,9 +5,14 @@
  */
 void print_int(int num)
 {
-    if (num > 9)
-    {
-        print_int(num / 10);
-    }
-    _putchar(num % 10 + '0');
+	if (num < 0)
+	{
+		num = num * -1;
+		_putchar('-');
+	}
+	if (num > 9)
+	{
+		print_int(num / 10);
+	}
+	_putchar(num % 10 + '0');
 }
