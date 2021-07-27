@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * show_int - convert int to char to print
  * @num: int to convert
@@ -8,5 +9,5 @@ void print_int(int num)
     {
         print_int(num / 10);
     }
-    putchar(num % 10 + '0');
+    _putchar(num % 10 + '0');
 }
