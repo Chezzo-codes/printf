@@ -1,19 +1,18 @@
 #include "holberton.h"
 #include <stdarg.h>
-
 /**
  * _printf - print format
  * @format:char * - string
  *
  * Return: int - string length
  */
-int _printf(const char*format,... )
+int _printf(const char *format, ...)
 {
 	int len = 0;
 	const char *string;
 	va_list arg;
-	va_start(arg, format);
 
+	va_start(arg, format);
 	if (format)
 	{
 		string = format;
@@ -28,6 +27,7 @@ int _printf(const char*format,... )
 				case 's':
 				{
 					char *ret = va_arg(arg, char*);
+
 					while (*ret)
 					{
 						_putchar(*ret);
@@ -43,12 +43,14 @@ int _printf(const char*format,... )
 				case 'd':
 				{
 					int ret = va_arg(arg, int);
+
 					print_int(ret);
 				}
 				break;
 				case 'i':
 				{
 					int ret = va_arg(arg, int);
+
 					print_int(ret);
 				}
 				break;

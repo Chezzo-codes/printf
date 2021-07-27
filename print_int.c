@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * show_int - convert int to char to print
+ * print_int - convert int to char to print
  * @num: int to convert
  */
 void print_int(int num)
