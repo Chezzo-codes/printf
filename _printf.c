@@ -25,39 +25,23 @@ int _printf(const char *format, ...)
 				switch (*format)
 				{
 				case 's':
-				{
-					char *ret = va_arg(arg, char*);
-
-					while (*ret)
-					{
-						_putchar(*ret);
-						ret++;
-					}
-				}
+					print_str(va_arg(arg, char*));
 				break;
 				case 'c':
 					_putchar((char)va_arg(arg, int));
 				break;
 				case 'd':
-				{
-					int ret = va_arg(arg, int);
-
-					print_int(ret);
-				}
+					print_int(va_arg(arg, int));
 				break;
 				case 'i':
-				{
-					int ret = va_arg(arg, int);
-
-					print_int(ret);
-				}
+					print_int(va_arg(arg, int));
 				break;
 				case '%':
 				{
 					_putchar('%');
 				}
 				break;
-				case 'u':
+				/*case 'u':
 				{
 					int ret = va_arg(arg, unsigned int);
 					
@@ -66,18 +50,14 @@ int _printf(const char *format, ...)
 						ret = ret * -1;
 					}
 					print_int(ret);
-				}
+				}*/
 				default:
-				{
 					_putchar(*format);
-				}
 				break;
 				}
 			}
 			else
-			{
 				_putchar(*format);
-			}
 			format++;
 		}
 	}
