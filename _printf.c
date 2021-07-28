@@ -36,9 +36,7 @@ int _printf(const char *format, ...)
 				}
 				break;
 				case 'c':
-				{
 					_putchar((char)va_arg(arg, int));
-				}
 				break;
 				case 'd':
 				{
@@ -59,6 +57,16 @@ int _printf(const char *format, ...)
 					_putchar('%');
 				}
 				break;
+				case 'u':
+				{
+					int ret = va_arg(arg, unsigned int);
+					
+					if (ret < 0)
+					{
+						ret = ret * -1;
+					}
+					print_int(ret);
+				}
 				default:
 				{
 					_putchar(*format);
