@@ -1,24 +1,19 @@
-int to_Binary(int n)
+#include "holberton.h"
+/**
+ *print_bin - converts dec to binary
+ *@dec: int decimal
+ */
+void print_bin(int dec)
 {
-    int a[10],i;
+	int bin=0, rem, i = 1;
 
-    for(i = 0;n > 0; i++)
-    {
-        a[i]=n%2;
-        n=n/2;
-    }
+	while(dec!=0)
+	{
+		rem = dec % 2;
+		bin += (rem*i);
+		dec /= 2;
+		i *= 10;
+	}
 
-    printf("n = %d\ni = %d\n",n, i);
-
-    for(i = i - 1; i >= 0; i--)
-    {
-        printf("%d",a[i]);
-    }
-
-    /*for(i = i - 1;i >= 0;i--)
-    {
-        printf("%d",a[i]);
-    }
-    return (0);
-    */
+	_printf("%d",bin);
 }
