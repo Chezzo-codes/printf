@@ -60,13 +60,14 @@ int _printf(const char *format, ...)
 				case 'u':
 				{
 					int ret = va_arg(arg, unsigned int);
-					
+
 					if (ret < 0)
 					{
 						ret = ret * -1;
 					}
 					print_int(ret);
 				}
+				break;
 				default:
 				{
 					_putchar(*format);
