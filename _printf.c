@@ -44,13 +44,18 @@ int _printf(const char *format, ...)
 				/*case 'u':
 				{
 					int ret = va_arg(arg, unsigned int);
-					
+
 					if (ret < 0)
 					{
 						ret = ret * -1;
 					}
 					print_int(ret);
+<<<<<<< HEAD
 				}*/
+=======
+				}
+				break;
+>>>>>>> bb2611f5632cd333c4011559b073c92ad71d0906
 				default:
 					_putchar(*format);
 				break;
